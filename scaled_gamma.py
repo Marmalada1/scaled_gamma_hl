@@ -1,4 +1,4 @@
-# Mark IX, Standard Gewichtung ist uniform
+# Version 9, Standard Gewichtung ist uniform
 import pandas as pd
 import numpy as np
 import errno, sys
@@ -49,7 +49,7 @@ def R(data,x,y,column,d):
     
 
 
-# die Distanz wird anhand der Gewichte berechnet, diese werden anhand des Ranges in der Position x und y im Dataframe ermittelt. Ausgweählt wird die Gewichtung anhand des Index.
+# Die Distanz wird anhand der Gewichte berechnet, diese werden anhand des Ranges in der Position x und y im Dataframe ermittelt. Ausgweählt wird die Gewichtung anhand des Index.
 
 # Distanzberechnung mit dem Maximum  
 
@@ -62,7 +62,7 @@ def d_sum(data,i,j,column):
     return min(1,sum(data[int(min(data[i,column],data[j,column]))-1:int(max(data[i,column],data[j,column])-1),column+2]))
   
 
-# wählt die Distanzberechnungsmethode aus
+# Wählt die Distanzberechnungsmethode aus
 def distance_selector(distance):
     if distance=='max':
         return d_max
@@ -85,7 +85,7 @@ def t_norm_luka(a,b):
 def t_conorm_luka(a,b):
     return min(a+b,1)
 
-#Wählt die Norm aus, entweder Produkt oder Łukasiewicz
+# Wählt die Norm aus, entweder Produkt oder Łukasiewicz
 def tnorm_selector(mode):
     if mode == 'product':
         tnorm=t_norm_product
